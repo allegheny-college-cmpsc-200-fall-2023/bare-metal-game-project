@@ -1,0 +1,8 @@
+- docs/report.md:
+    - description: docs/report.md contains no TODOs
+      category: TODOs
+      check: MatchFileFragment
+      options:
+        fragment: 'TODO'
+        count: 0
+        exact: true
