@@ -17,6 +17,7 @@ tl;dr: you're mapping sectors of space based on data provided in order to map th
 * Maps must be processed by Pico devices using programs written in `C`
 * Maps must be uploaded _back_ to `metal.cmpsc200.chompe.rs` using processing code
   * Only maps which are _both uploaded_ and _correct_ will receive the vaunted `rock dollars`
+* All players must decode _at least one map_ successfully
 
 ### Maps
 
@@ -188,16 +189,16 @@ The competition will award the top `3` places.
 
 The competition here _does not_ impact your assessment directly (though, folks who reach the top of the league table are probably doing something _right_). Everyone starts out on equal footing with the same knowledge. How can you take your knowledge of hacks, tricks, and clever misuses and put it to work?
 
-This competition employs _points_ as its basis for comparison. There two ways to gain points:
+This competition employs _rock dollars_ as its basis for comparison. There two ways to gain points:
 
 * total count of maps solved
 * "style" points
 
 ### Overall maps solved
 
-Players gain points for the overall number of maps solved. Points for this category break down according to the following schedule:
+Players gain Rock Dollars for the overall number of maps solved. Rock Dollars for this category break down according to the following schedule:
 
-|Place | Points | Description |
+|Place | Rock Dollars | Description |
 |:-----|:-------|:------------|
 |1     |10      | Most maps solved |
 |2     |7       | Second most maps solved |
@@ -207,9 +208,9 @@ Players gain points for the overall number of maps solved. Points for this categ
 
 Players may also incorporate other features that use or augment the mapping process in ways beyond the the expectations above. Style "upgrades" _do not_ increase speed or improve performance of your map decoder, but might include extremely minified source code or other flashy doodad or gewgaw.
 
-These should be described in the [docs/style.md](docs/style.md) file. Each appropriate augementation will be awarded either "major" or "minor" points:
+These should be described in the [docs/style.md](docs/style.md) file. Each appropriate augementation will be awarded either "major" or "minor" amounts of Rock Dollars:
 
-|Type | Points |
+|Type | Rock Dollars |
 |:----|:-------|
 |Minor| .5     |
 |Major| 1      |
