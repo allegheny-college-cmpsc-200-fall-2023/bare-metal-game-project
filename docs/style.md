@@ -15,7 +15,7 @@ For each "upgrade" attempted, copy and paste the following questions. Only _comp
 
 `TODO
 
-## Would you award major or minor points for this? Why?
+## Would you award major or minor value for this? Why?
 
 `TODO`
 ```
