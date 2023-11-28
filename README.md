@@ -1,8 +1,9 @@
 # CMPSC 200: Stellar Cartography
 
-|Deadline | Time |
-|:--------|:-----|
-|December 15 | 12:00p (noon) |
+|Deadline | Time | Type |
+|:--------|:-----|:-----|
+|December 1  | 14:30 | Competition starts |
+|December 15 | 12:00 (noon) | Final deadline |
 
 So far, our missions have concentrated on the _known_ universe and the many rocks it contains. However, there are many, many more rocks out there. Like..._many_. Our job? To boldy go where no rock miner has gone before. Competitively.
 
@@ -183,7 +184,39 @@ You should consider the following something of canonical advice for figuring up 
 
 ## Note on competition
 
+The competition will award the top `3` places.
+
 The competition here _does not_ impact your assessment directly (though, folks who reach the top of the league table are probably doing something _right_). Everyone starts out on equal footing with the same knowledge. How can you take your knowledge of hacks, tricks, and clever misuses and put it to work?
+
+This competition employs _points_ as its basis for comparison. There two ways to gain points:
+
+* total count of maps solved
+* "style" points
+
+### Overall maps solved
+
+Players gain points for the overall number of maps solved. Points for this category break down according to the following schedule:
+
+|Place | Points | Description |
+|:-----|:-------|:------------|
+|1     |10      | Most maps solved |
+|2     |7       | Second most maps solved |
+|3     |5       | Third most maps solved |
+
+### "Style" points
+
+Players may also incorporate other features that use or augment the mapping process in ways beyond the the expectations above. Style "upgrades" _do not_ increase speed or improve performance of your map decoder, but might include extremely minified source code or other flashy doodad or gewgaw.
+
+These should be described in the [docs/style.md](docs/style.md) file. Each appropriate augementation will be awarded either "major" or "minor" points:
+
+|Type | Points |
+|:----|:-------|
+|Minor| .5     |
+|Major| 1      |
+
+## Obligatory encouragement statement
+
+May the best miner win.
 
 ## Changes to files in `.vscode`
 

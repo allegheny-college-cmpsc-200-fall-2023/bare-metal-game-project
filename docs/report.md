@@ -1,4 +1,4 @@
-# Project: General report
+# Bare Metal: General report
 
 As a reminder, this course explores four (4) major learning outcomes. For sake of convenience, they are:
 
