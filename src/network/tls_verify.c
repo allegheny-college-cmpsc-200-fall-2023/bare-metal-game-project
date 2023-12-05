@@ -7,6 +7,8 @@
 #include "pico/stdlib.h"
 #include "pico/cyw43_arch.h"
 
+#include "headers/cJSON.h"
+
 // Using this url as we know the root cert won't change for a long time
 #define TLS_CLIENT_SERVER "metal.cmpsc200.chompe.rs"
 #define TLS_CLIENT_HTTP_REQUEST  "GET / HTTP/1.1\r\n" \
