@@ -40,15 +40,6 @@ extern char *client_connect(const char *cert, size_t cert_len, const char *serve
 
 char *https_request() {
 
-    if (cyw43_arch_init()) {
-        printf("failed to initialise\n");
-    }
-    cyw43_arch_enable_sta_mode();
-
-    if (cyw43_arch_wifi_connect_timeout_ms(WIFI_SSID, WIFI_PASSWORD, CYW43_AUTH_WPA2_AES_PSK, 30000)) {
-        printf("failed to connect\n");
-    }
-
     const char cert_ok[] = TLS_ROOT_CERT_OK;
     char *response = client_connect(
         cert_ok, 
@@ -60,6 +51,45 @@ char *https_request() {
 
     /* sleep a bit to let usb stdio write out any buffer to host */
     sleep_ms(100);
-    cyw43_arch_deinit();
+    return response;
+    
+}
+
+char *upload_map(char *user, char *test, int pct) {
+    cJSON *post_data = cJSON_CreateObject();
+
+    cJSON_AddItemToObject(post_data, "user", cJSON_CreateString(user));
+    cJSON_AddItemToObject(post_data, "map", cJSON_CreateString(test));
+    cJSON_AddItemToObject(post_data, "pct", cJSON_CreateNumber((double)pct));
+
+    char *post_data_string = cJSON_Print(post_data);
+    int size_of_data = strlen(post_data_string);
+    char size_of_data_string[100];
+    sprintf(
+        size_of_data_string,
+        "%d",
+        size_of_data
+    );
+    char upload_request[150 + size_of_data];
+    strcpy(upload_request, "POST / HTTP/1.1\r\n");
+    strcat(upload_request, "Host: " TLS_CLIENT_SERVER "\r\n");
+    strcat(upload_request, "Connection: close\r\n");
+    strcat(upload_request, "Content-Type: application/json\r\n");
+    strcat(upload_request, "Content-Length: ");
+    strcat(upload_request, size_of_data_string);
+    strcat(upload_request, "\r\n\r\n");
+    strcat(upload_request, post_data_string);
+
+    const char cert_ok[] = TLS_ROOT_CERT_OK;
+
+    char *response = client_connect(
+        cert_ok, 
+        sizeof(cert_ok), 
+        TLS_CLIENT_SERVER, 
+        upload_request, 
+        TLS_CLIENT_TIMEOUT_SECS
+    );
+
+    sleep_ms(100);
     return response;
 }

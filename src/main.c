@@ -46,9 +46,26 @@ int dist_topology(int topology_pct) {
 
 // TODO: Write function to create base map
 
+void connect_to_wifi() {
+    if (cyw43_arch_init()) {
+        printf("failed to initialise\n");
+    }
+    cyw43_arch_enable_sta_mode();
+
+    if (
+        cyw43_arch_wifi_connect_blocking(
+            WIFI_SSID, 
+            WIFI_PASSWORD, 
+            CYW43_AUTH_WPA2_AES_PSK
+        )
+    ) {
+        printf("failed to connect\n");
+    }
+}
+
 int main(void) {
     stdio_init_all();
-
+    connect_to_wifi();
     while(true) {
 
         // TODO: Make HTTPS request to game server
