@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 
+#include "headers/data.h"
 #include "headers/cache.h"
 #include "headers/timing.h"
 #include "headers/cJSON.h"
@@ -12,6 +13,19 @@
 
 // DO NOT DELETE: Create call to external function to make HTTPS request
 extern char* https_request();
+/*
+  PARAMETERS:
+  - STRING username -- your choice, but choose and keep consistent to earn points
+ 
+ - STRING output of function map_to_string
+   
+   map_to_string is a function in data.h which takes the INT WIDTH, INT HEIGHT, 
+   and INT ** 2D matrix as separate parameters (in that order) and returns a 
+   string version of the map 
+
+  - INT percentage of topological features
+*/
+extern char* upload_map(char *, char *, int);
 
 // TODO: Parse JSON values using a function
 
